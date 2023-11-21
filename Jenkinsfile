@@ -23,14 +23,14 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Building Docker Image
-                    sh "docker build -t ${IMAGE_TAG} ."
-                }
-            }
-        }
+        // stage('Build Docker Image') {
+        //     steps {
+        //         script {
+        //             // Building Docker Image
+        //             sh "docker build -t ${IMAGE_TAG} ."
+        //         }
+        //     }
+        // }
 
 //         stage('Push to Docker Hub') {
 //             steps {

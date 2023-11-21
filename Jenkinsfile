@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/mahesh430/sample-java-application.git'
+                git 'https://github.com/sprakash007/sample-java-application.git'
             }
         }
 
@@ -32,24 +32,24 @@ pipeline {
             }
         }
 
-        stage('Push to Docker Hub') {
-            steps {
-                script {
-                    // Login to Docker Hub
-                    sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login --username ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
-                    // Pushing Image to Docker Hub
-                    sh "docker push ${IMAGE_TAG}"
-                }
-            }
-        }
+//         stage('Push to Docker Hub') {
+//             steps {
+//                 script {
+//                     // Login to Docker Hub
+//                     sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login --username ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+//                     // Pushing Image to Docker Hub
+//                     sh "docker push ${IMAGE_TAG}"
+//                 }
+//             }
+//         }
 
-    }
+//     }
 
-    post {
-        always {
-            // Clean up Docker images
-            sh "docker rmi ${IMAGE_TAG}"
-        }
-    }
-}
+//     post {
+//         always {
+//             // Clean up Docker images
+//             sh "docker rmi ${IMAGE_TAG}"
+//         }
+//     }
+// }
 

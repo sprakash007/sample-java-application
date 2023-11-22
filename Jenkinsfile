@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/sprakash007/sample-java-application.git'
+                git branch: 'dev', credentialsId: 'github-credentials', url: 'https://github.com/sprakash007/sample-java-application.git'
+
             }
         }
 
